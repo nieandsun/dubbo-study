@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <packaging>pom</packaging>
+    <modules>
+        <module>nrsc-api</module>
+        <module>nrsc-common</module>
+        <module>nrsc-order-service</module>
+        <module>nrsc-user-service</module>
+    </modules>
+
+    <!-- 当前pom的maven坐标-->
+    <groupId>com.nrsc</groupId>
+    <artifactId>dubbo-study</artifactId>
+    <version>${rversion}</version>
+    <name>dubbo-study</name>
+    <description>manage the whole project</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <swagger.annotations.version>1.6.1</swagger.annotations.version>
+        <fastjson.version>1.2.68</fastjson.version>
+        <spring.cloud.version>Hoxton.SR5</spring.cloud.version>
+        <spring-boot.version>2.3.1.RELEASE</spring-boot.version>
+        <dubbo.version>2.7.7</dubbo.version>
+
+        <!--api对应的版本-->
+        <rversion.api.num>0.0.1</rversion.api.num>
+        <rversion.api>${rversion.api.num}-${version.profile.postfix}</rversion.api>
+
+        <!--其他对应的版本(比如说我们)-->
+        <rversion.num>1.0.0</rversion.num>
+        <rversion>${rversion.num}-${version.profile.postfix}</rversion>
+    </properties>
+
+    <!--
+        只定义依赖的版本，不会实际依赖 -> jar包版本管理,
+        子pom用的话,就不用指定版本号了,但如果子pom指定了,用子pom的
+    -->
+    <dependencyManagement>
+        <dependencies>
+            <!--控制springcloud相关jar包的版本-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Spring Boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.annotations.version}</version>
+                <scope>provided</scope> <!--期望JDK、容器或使用者会提供这个依赖-->
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <!--环境管理-->
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <project-packaging>jar</project-packaging>
+                <activatedProperties>dev</activatedProperties>
+                <version.profile.postfix>SNAPSHOT</version.profile.postfix>
+                <log-level>DEBUG</log-level>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+
+        <profile>
+            <id>test</id>
+            <properties>
+                <project-packaging>jar</project-packaging>
+                <activatedProperties>test</activatedProperties>
+                <version.profile.postfix>SNAPSHOT</version.profile.postfix>
+                <log-level>DEBUG</log-level>
+            </properties>
+        </profile>
+
+
+        <profile>
+            <id>uat</id>
+            <properties>
+                <project-packaging>jar</project-packaging>
+                <activatedProperties>uat</activatedProperties>
+                <version.profile.postfix>SNAPSHOT</version.profile.postfix>
+                <log-level>INFO</log-level>
+            </properties>
+        </profile>
+
+
+        <profile>
+            <id>prod</id>
+            <properties>
+                <project-packaging>jar</project-packaging>
+                <activatedProperties>prod</activatedProperties>
+                <version.profile.postfix>RELEASE</version.profile.postfix>
+                <log-level>INFO</log-level>
+            </properties>
+        </profile>
+    </profiles>
+
+
+    <!--maven打包插件-->
+    <build>
+        <plugins>
+            <!--jar包-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <!--源码包-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
