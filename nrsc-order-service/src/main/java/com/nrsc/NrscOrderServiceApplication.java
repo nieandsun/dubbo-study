@@ -1,13 +1,13 @@
-package com.nrsc.nrsc;
+package com.nrsc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class NrscUserServiceApplication {
+public class NrscOrderServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(NrscUserServiceApplication.class, args);
+        SpringApplication.run(NrscOrderServiceApplication.class, args);
     }
 
 }

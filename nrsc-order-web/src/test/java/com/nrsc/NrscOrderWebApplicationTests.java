@@ -1,12 +1,13 @@
-package com.nrsc.nrsc;
+package com.nrsc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class NrscOrderServiceApplicationTest {
+class NrscOrderWebApplicationTests {
 
     @Test
-    void main() {
+    void contextLoads() {
     }
+
 }

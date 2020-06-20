@@ -10,8 +10,8 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>nrsc-user-service</artifactId>
-    <name>nrsc-user-service</name>
+    <artifactId>nrsc-user-com.nrsc.service.service</artifactId>
+    <name>nrsc-user-com.nrsc.service.service</name>
     <version>${rversion}</version>
 
     <dependencies>
@@ -57,7 +57,7 @@
                         本次事例未涉及其他模块有启动类，可自行测试 -->
                 <configuration>
                     <!-- 指定该Main Class为全局的唯一入口 -->
-                    <mainClass>com.nrsc.nrsc.NrscUserServiceApplication</mainClass>
+                    <mainClass>com.nrsc.NrscUserServiceApplication</mainClass>
                     <layout>ZIP</layout>
                 </configuration>
                 <executions>

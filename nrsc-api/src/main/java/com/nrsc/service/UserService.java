@@ -1,4 +1,4 @@
-package service;
+package com.nrsc.service;
 
 import com.nrsc.pojo.UserAddress;
 
