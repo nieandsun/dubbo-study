@@ -35,6 +35,12 @@
         <!--其他对应的版本-->
         <rversion.num>1.0.0</rversion.num>
         <rversion>${rversion.num}-${version.profile.postfix}</rversion>
+        <!--
+        解决打包出现如下问题的方法
+        Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platfor
+        -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
     </properties>
 
     <!--
