@@ -12,20 +12,14 @@
     </parent>
 
     <artifactId>nrsc-api</artifactId>
-    <packaging>jar</packaging>
     <name>nrsc-api</name>
     <version>${rversion.api}</version>
 
     <dependencies>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-
-        <!--有了该pom就能使用swagger的提供的注解了-->
-        <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-annotations</artifactId>
+            <groupId>com.nrsc</groupId>
+            <artifactId>nrsc-pojo</artifactId>
+            <version>${rversion}</version>
         </dependency>
     </dependencies>
 

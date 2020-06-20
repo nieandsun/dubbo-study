@@ -1,6 +1,6 @@
 package service;
 
-import entity.UserAddress;
+import com.nrsc.pojo.UserAddress;
 
 import java.util.List;
 

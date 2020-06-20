@@ -5,9 +5,11 @@
 
     <packaging>pom</packaging>
     <modules>
-        <module>nrsc-api</module>
+        <module>nrsc-pojo</module>
         <module>nrsc-common</module>
+        <module>nrsc-api</module>
         <module>nrsc-order-service</module>
+        <module>nrsc-order-web</module>
         <module>nrsc-user-service</module>
     </modules>
 
@@ -30,7 +32,7 @@
         <rversion.api.num>0.0.1</rversion.api.num>
         <rversion.api>${rversion.api.num}-${version.profile.postfix}</rversion.api>
 
-        <!--其他对应的版本(比如说我们)-->
+        <!--其他对应的版本-->
         <rversion.num>1.0.0</rversion.num>
         <rversion>${rversion.num}-${version.profile.postfix}</rversion>
     </properties>
@@ -59,6 +61,15 @@
                 <scope>import</scope>
             </dependency>
 
+            <!-- Apache Dubbo  -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-dependencies-bom</artifactId>
+                <version>${dubbo.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <dependency>
                 <groupId>io.swagger</groupId>
                 <artifactId>swagger-annotations</artifactId>
@@ -68,6 +79,33 @@
 
         </dependencies>
     </dependencyManagement>
+
+    <!--公用jar-->
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <!--有了该pom就能使用swagger的提供的注解了-->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+        </dependency>
+    </dependencies>
+
+    <!-- 公司maven仓库地址
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>公司snapshots地址</url>
+        </snapshotRepository>
+        <repository>
+            <id>releases</id>
+            <url>公司releases地址</url>
+        </repository>
+    </distributionManagement>
+    -->
 
     <!--环境管理-->
     <profiles>

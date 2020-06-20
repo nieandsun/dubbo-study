@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--suppress ALL -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -11,7 +12,6 @@
 
 
     <artifactId>nrsc-order-service</artifactId>
-    <packaging>jar</packaging>
     <name>nrsc-order-service</name>
     <version>${rversion}</version>
 
@@ -32,7 +32,29 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!-- Dubbo Spring Boot Starter -->
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+
+        <!--add api and common jar-->
+        <dependency>
+            <groupId>com.nrsc</groupId>
+            <artifactId>nrsc-api</artifactId>
+            <version>${rversion.api}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.nrsc</groupId>
+            <artifactId>nrsc-common</artifactId>
+            <version>${rversion}</version>
+        </dependency>
+
     </dependencies>
+
 
     <build>
         <plugins>
@@ -56,4 +78,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
