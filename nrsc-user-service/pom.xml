@@ -17,11 +17,6 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
             <exclusions>
@@ -45,6 +40,12 @@
             <groupId>com.nrsc</groupId>
             <artifactId>nrsc-common</artifactId>
             <version>${rversion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.nrsc</groupId>
+            <artifactId>nrsc-api</artifactId>
+            <version>${rversion.api}</version>
         </dependency>
     </dependencies>
 
