@@ -1,0 +1,16 @@
+server:
+  port: 9001
+
+
+dubbo:
+  application:
+    name: nrsc-order-service #应用名称
+  registry:
+    protocol: zookeeper #注册中心的协议
+    address: 127.0.0.1:2181 #连接注册中心的地址
+  monitor:
+    protocol: registry #生产者自动去注册中心里发现监控中心
+  # 如果仅仅是消费者不需要配下面的内容
+  protocol:
+    name: dubbo # 生产者和消费者之间通讯的协议
+    port: 20990 # 生产者和消费者之间通讯的端口号

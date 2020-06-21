@@ -2,12 +2,14 @@ package com.nrsc.pojo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.io.Serializable;
 
 @ApiModel("用户地址信息")
 @Data
+@AllArgsConstructor
 public class UserAddress implements Serializable {
 
     private static final long serialVersionUID = -6473376930137251405L;
