@@ -43,6 +43,28 @@
             <artifactId>dubbo-spring-boot-starter</artifactId>
             <version>${dubbo.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo-dependencies-zookeeper -->
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-dependencies-zookeeper</artifactId>
+            <version>${dubbo.version}</version>
+            <type>pom</type>
+        </dependency>
+
+
+        <!--add api and common jar-->
+        <dependency>
+            <groupId>com.nrsc</groupId>
+            <artifactId>nrsc-common</artifactId>
+            <version>${rversion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.nrsc</groupId>
+            <artifactId>nrsc-api</artifactId>
+            <version>${rversion.api}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
