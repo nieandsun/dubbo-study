@@ -11,6 +11,7 @@
         <module>nrsc-order-service</module>
         <module>nrsc-order-web</module>
         <module>nrsc-user-service</module>
+        <module>nrsc-order-service-web</module>
     </modules>
 
     <!-- 当前pom的maven坐标-->
