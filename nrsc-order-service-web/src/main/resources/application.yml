@@ -3,15 +3,14 @@ server:
 
 dubbo:
   application:
-    name: nrsc-order-service-web #\u5E94\u7528\u540D\u79F0
+    name: nrsc-order-service-web #应用名称
   registry:
-    protocol: zookeeper #\u6CE8\u518C\u4E2D\u5FC3\u7684\u534F\u8BAE
-    address: 127.0.0.1:2181 #\u8FDE\u63A5\u6CE8\u518C\u4E2D\u5FC3\u7684\u5730\u5740
+    protocol: zookeeper #注册中心的协议
+    address: 127.0.0.1:2181 #连接注册中心的地址
   monitor:
-    protocol: registry #\u751F\u4EA7\u8005\u81EA\u52A8\u53BB\u6CE8\u518C\u4E2D\u5FC3\u91CC\u53D1\u73B0\u76D1\u63A7\u4E2D\u5FC3
+    protocol: registry #生产者自动去注册中心里发现监控中心
 
-  # \u8FD9\u91CC\u5148\u5C06nrsc-order-service-web\u53EA\u770B\u4F5C\u6D88\u8D39\u8005\uFF0C\u6240\u4EE5\u4E0B\u9762\u7684\u6211\u5148\u5C06\u5176\u6CE8\u91CA\u6389
+# 这里暂时只将其作为消费者，不需要下面的配置
 #  protocol:
-#    name: dubbo # \u751F\u4EA7\u8005\u548C\u6D88\u8D39\u8005\u4E4B\u95F4\u901A\u8BAF\u7684\u534F\u8BAE
-#    port: 21880 # \u751F\u4EA7\u8005\u548C\u6D88\u8D39\u8005\u4E4B\u95F4\u901A\u8BAF\u7684\u7AEF\u53E3\u53F7
-
+#    name: dubbo # 生产者和消费者之间通讯的协议
+#    port: 20990 # 生产者和消费者之间通讯的端口号
