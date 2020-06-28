@@ -7,12 +7,22 @@
     <groupId>com.nrsc</groupId>
     <artifactId>spi-study</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <properties>
+        <dubbo.version>2.7.7</dubbo.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.9</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-common</artifactId>
+            <version>${dubbo.version}</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>

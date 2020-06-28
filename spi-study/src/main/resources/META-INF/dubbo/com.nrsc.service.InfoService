@@ -1,0 +1,3 @@
+a=com.nrsc.service.infoService.impl.InfoServiceAImpl
+b=com.nrsc.service.infoService.impl.InfoServiceBImpl
+c=com.nrsc.service.infoService.impl.InfoServiceCImpl
