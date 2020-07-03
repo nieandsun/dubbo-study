@@ -9,7 +9,7 @@ import org.apache.dubbo.common.extension.SPI;
  *
  *		只有标注了SPI注解的接口，才是Dubbo的菜
  */
-@SPI("b") //指定缺省的实现类
+@SPI("b") //指定缺省实现类的别名
 public interface InfoService {
     Object sayHello(String name);
 }
