@@ -1,5 +1,7 @@
 package com.nrsc.service;
 
+import org.apache.dubbo.common.URL;
+import org.apache.dubbo.common.extension.Adaptive;
 import org.apache.dubbo.common.extension.SPI;
 
 /***
@@ -12,4 +14,9 @@ import org.apache.dubbo.common.extension.SPI;
 @SPI("b") //指定缺省实现类的别名
 public interface InfoService {
     Object sayHello(String name);
+
+
+    @Adaptive({"NRSC"})
+    //@Adaptive
+    Object passInfo(String msg, URL url);
 }
