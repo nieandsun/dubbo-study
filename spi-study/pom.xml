@@ -22,7 +22,12 @@
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-common</artifactId>
             <version>${dubbo.version}</version>
-            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-rpc-dubbo</artifactId>
+            <version>${dubbo.version}</version>
         </dependency>
     </dependencies>
 </project>
