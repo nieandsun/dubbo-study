@@ -4,13 +4,11 @@ import com.nrsc.pojo.UserAddress;
 import com.nrsc.service.OrderService;
 import com.nrsc.service.UserService;
 import org.apache.dubbo.config.annotation.DubboReference;
-import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@DubboService //暴漏dubbo服务
 public class OrderServiceImpl implements OrderService {
 
     @DubboReference //消费服务
@@ -22,5 +20,6 @@ public class OrderServiceImpl implements OrderService {
         //1、查询用户的收货地址
         List<UserAddress> addressList = userService.getUserAddressList(userId);
         return addressList;
+
     }
 }
