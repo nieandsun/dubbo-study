@@ -8,6 +8,10 @@
     <artifactId>rpc-provider</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
+    <properties>
+        <dubbo.version>2.6.8</dubbo.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -32,11 +36,56 @@
             <version>4.9</version>
             <scope>compile</scope>
         </dependency>
+
+        <!--spring环境，这一个jar就够了-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>5.2.7.RELEASE</version>
         </dependency>
+
+        <!--dubbo协议，该包里同时含有dubbo的Common等包-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo-rpc-dubbo</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+
+        <!--dubbo协议底层用的netty，注意这里要用netty4-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo-remoting-netty4</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+
+        <!--dubbo协议底层序列化用的hessian2-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo-serialization-hessian2</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+
+        <!--http协议 该包里同时含有dubbo的Common等包-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo-rpc-http</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+
+        <!--rmi协议 该包里同时含有dubbo的Common等包-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo-rpc-rmi</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+
+        <!--hessian协议 该包里同时含有dubbo的Common等包-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo-rpc-hessian</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+
     </dependencies>
 
 </project>
