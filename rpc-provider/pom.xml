@@ -86,6 +86,14 @@
             <version>${dubbo.version}</version>
         </dependency>
 
+        <!-- zookeeper注册中心 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo-registry-zookeeper</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+
+
     </dependencies>
 
 </project>
