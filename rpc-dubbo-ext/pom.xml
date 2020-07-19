@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.nrsc</groupId>
+    <artifactId>rpc-dubbo-ext</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <properties>
+        <dubbo.version>2.6.8</dubbo.version>
+    </properties>
+
+    <dependencies>
+        <!-- dubbo支持 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo-rpc-api</artifactId>
+            <version>${dubbo.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo-cluster</artifactId>
+            <version>${dubbo.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+
+</project>

@@ -93,6 +93,12 @@
             <version>${dubbo.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.nrsc</groupId>
+            <artifactId>rpc-dubbo-ext</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
 
     </dependencies>
 
